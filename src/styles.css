@@ -1,0 +1,51 @@
+.App{
+  display: flex;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+}
+
+.todo{
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  width: 400px;
+
+  background-color: blue;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+
+  border-bottom: 1px solid rgb(230, 230, 230);
+  padding-bottom: 2rem;
+}
+
+header button{
+  background-color: #fb6c6f;
+  padding: 0.6rem;
+  border-radius: 5px;
+}
+
+header button:hover{
+  filter: brightness(0.90);
+  transition: .4s;
+}
+
+header button svg{
+  font-size: 1.6rem;
+  color: #fff;
+}
+
+header input {
+  padding: 1rem 2rem;
+  background-color: rgb(244, 243, 243);
+  width: 300px;
+  border-radius: 5px;
+
+  font-family: 'Raleway', sans-serif;
+  font-size: 1.2rem;
+}
