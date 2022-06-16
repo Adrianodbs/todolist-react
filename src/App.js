@@ -24,7 +24,24 @@ function App() {
       const newTask = { id: idRandom(1234565), title: task, isComplete: false }
 
       setTasks([...tasks, newTask])
+      setTask('')
     }
+  }
+
+  function handleToggleTaskComplete(id) {
+    const taskComplete = tasks.map(task => {
+      if (task.id === id) {
+        return { ...task, isComplete: !task.isComplete }
+      }
+
+      return task
+    })
+
+    setTasks(taskComplete)
+  }
+
+  function handleDeleteTask(id) {
+    setTasks(tasks.filter(remove => remove.id !== id))
   }
 
   return (
@@ -45,17 +62,25 @@ function App() {
         </header>
 
         {tasks.map(task => (
-          <div key={task.id} className="task-container">
+          <div
+            key={task.id}
+            className={
+              task.isComplete ? 'task-container completed' : 'task-container'
+            }
+          >
             <div className="check-and-title">
               <label className="checkbox-container">
-                <input type="checkbox" />
+                <input
+                  type="checkbox"
+                  onClick={() => handleToggleTaskComplete(task.id)}
+                />
 
                 <span className="checkmark"></span>
               </label>
               <p>{task.title}</p>
             </div>
             <div>
-              <MdOutlineClose />
+              <MdOutlineClose onClick={() => handleDeleteTask(task.id)} />
             </div>
           </div>
         ))}

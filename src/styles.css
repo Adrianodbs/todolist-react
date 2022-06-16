@@ -115,6 +115,10 @@ header input {
   font-size: 1.4rem;
 }
 
+.task-container.completed p{
+  color: #909193;
+}
+
 .task-container svg{
   font-size: 1.6rem;
   color: #fd355a;
